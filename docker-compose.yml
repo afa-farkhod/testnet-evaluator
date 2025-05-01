@@ -3,6 +3,8 @@ services:
   valuter:
       image: archwaynetwork/valuter:latest
       container_name: valuter
+      depends_on:
+        - postgres
       build:
         context: ./valuter
         target: development  # development | test | production (default) # docker-compose up --build
@@ -42,6 +44,8 @@ services:
   valuter-ui:
     image: archwaynetwork/valuter-ui:latest
     container_name: valuter-ui
+    depends_on:
+      - valuter
     build:
       context: ./valuter-ui
     ports: 
@@ -151,6 +155,8 @@ services:
   synaps-verifier:
     image: archwaynetwork/synaps-verifier:latest
     container_name: synaps-verifier
+    depends_on:
+      - postgres
     build:
       context: ./synaps-verifier
       # target: development  # development | test | production (default) # docker-compose up --build

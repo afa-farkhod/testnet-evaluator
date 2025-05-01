@@ -1,6 +1,25 @@
+# IDE / Editor configs
+.vscode/
+.idea/
 .vscode/settings.json
+*.iml
+
+# Environment
+.env
+*.env
+
+# Secrets
+creds.txt
+
+# Local volumes / databases
 db/
 tmp/
-.env
-creds.txt
-.env
+pgadmin/
+
+# Docker
+*.log
+docker-compose.override.yml
+
+# OS-specific
+.DS_Store
+Thumbs.db
